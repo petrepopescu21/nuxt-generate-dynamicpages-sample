@@ -1,2 +1,3 @@
-# nuxt-generate-dynamicpages-sample
-Created with CodeSandbox
+# Hello World with Nuxt.js
+
+https://nuxtjs.org/examples
