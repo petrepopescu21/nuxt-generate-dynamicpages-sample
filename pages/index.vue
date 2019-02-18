@@ -12,12 +12,13 @@ export default {
   head: {
     title: "Home page"
   },
-  asyncData({ $axios }) {
-    return $axios
-      .get("https://jsonplaceholder.typicode.com/todos/")
-      .then(res => {
-        return { todos: res.data };
-      });
+  asyncData: async ({ $axios }) => {
+    var response = await $axios.get(
+      "https://jsonplaceholder.typicode.com/todos/"
+    );
+    return {
+      todos: response.data
+    };
   }
 };
 </script>

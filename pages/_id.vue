@@ -12,12 +12,13 @@ export default {
       title: this.todo.title
     };
   },
-  asyncData(ctx) {
-    return ctx.$axios
-      .get("https://jsonplaceholder.typicode.com/todos/" + ctx.route.params.id)
-      .then(res => {
-        return { todo: res.data };
-      });
+  asyncData: async ctx => {
+    var response = await ctx.$axios.get(
+      "https://jsonplaceholder.typicode.com/todos/" + ctx.route.params.id
+    );
+    return {
+      todo: response.data
+    };
   }
 };
 </script>
